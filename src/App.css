@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=Poppins:ital,wght@0,400;0,500;0,700;1,400&family=Roboto:ital,wght@0,500;1,400&display=swap');
+
+.container {
+    margin: auto;
+    font-family: 'Poppins';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-text {
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+    background: linear-gradient(223deg, #8A3CBF 0%, #2998FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header-money {
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header-rest-money {
+    color: rgb(194, 194, 194);
+    margin-top: 5px;
+    text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.statistik-pemakaian {
+    display: flex;
+    justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.statistik-row {
+    width: 80%;
+}
+
+.statistik-col {
+    margin: 20px;
+    padding: 10px 10px 10px 15px;
+    border-radius: 14px;
+    border: 1px solid #F4F4F4;
+    background: #FFF;
+    box-shadow: 0px 6px 30px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+.logo-dompet,.logo-uang {
+    width: 20px;
+    height: 18px;
+    fill: #3C3DBF;
+}
+
+.col p{
+    margin-top: 10px;
+    color: rgb(194, 194, 194);
+    font-size: 12px;
+}
+
+.col h3 {
+    font-weight: bold;
+}
+
+.col p span {
+    color: #3C3DBF;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* ringkasan */
+.ringkasan-transaksi {
+    margin-top: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+.ringkasan-transaksi h4 {
+    padding: 15px;
+    color: #3C3DBF;
+}
+
+.ringkasan-transaksi .ringkasan-btn {
+    padding: 10px;
+}
+
+.ringkasan-btn button{
+    border-radius: 15px;
+    width: 150px;
+    border: none;
+    padding: 5px;
+}
+
+.ringkasan-btn button svg{
+    margin-left: 2px;
+}
+
+.btn-pemasukan{
+    background-color: #3C3DBF;
+    color: white;
+}
+
+.btn-pengeluaran{
+    background-color: #FF3666;
+    color: white;
+}
+/* riwayat */
+
+.riwayat-transaksi {
+    width: 80%;
+    margin: auto;
+    padding: 15px;
+}
+
+.riwayat-transaksi .row {
+    margin-top: 15px;
+}
+
+.wrap-svg {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #2998FF;
+    background-color: rgba(66, 69, 248, 0.25);
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.desc-list {
+    margin-left: 20px;
+    margin-top: -15px;
+    height: 20px;
+}
+
+
+.tanggal-list {
+    margin-top: -20px;
+    font-size: 12px;
+}
+
+.nominal-list h5 {
+    padding-top: 2px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: right;
 }

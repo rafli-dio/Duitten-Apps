@@ -1,25 +1,182 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Container, Row, Col } from "react-bootstrap";
+import { FaWallet, FaMoneyBill } from "react-icons/fa";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+  }
+  render() {
+    return (
+      <>
+        <Container>
+          <h1 className="header-text">Duitten Apps</h1>
+          <h2 className="header-money">Rp.8.000.000,-</h2>
+          <p className="header-rest-money">Sisa uang kamu tersisa 75% lagi</p>
+          <div className="statistik-pemakaian">
+            <Row className="statistik-row">
+              <Col className="statistik-col">
+                <FaWallet className="logo-dompet" />
+                <p>Pemasukan</p>
+                <h3>Rp.10.000.000,-</h3>
+                <p>
+                  <span>50</span>
+                  Transaksi
+                </p>
+              </Col>
+              <Col className="statistik-col">
+                <FaMoneyBill className="logo-uang" />
+                <p>Pemakaian</p>
+                <h3>Rp.2.000.000,-</h3>
+                <p>
+                  <span>50</span>
+                  Transaksi
+                </p>
+              </Col>
+            </Row>
+          </div>
+          <div class="ringkasan-transaksi">
+            <Row>
+              <Col>
+                <h4>Ringkasan Transaksi</h4>
+              </Col>
+              <Col className="ringkasan-btn" md="auto">
+                <button className="btn-pemasukan">
+                  Pemasukan{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <path
+                      d="M16 8C16 10.1217 15.1571 12.1566 13.6569 13.6569C12.1566 15.1571 10.1217 16 8 16C5.87827 16 3.84344 15.1571 2.34315 13.6569C0.842855 12.1566 0 10.1217 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8ZM8.5 4.5C8.5 4.36739 8.44732 4.24021 8.35355 4.14645C8.25979 4.05268 8.13261 4 8 4C7.86739 4 7.74021 4.05268 7.64645 4.14645C7.55268 4.24021 7.5 4.36739 7.5 4.5V7.5H4.5C4.36739 7.5 4.24021 7.55268 4.14645 7.64645C4.05268 7.74021 4 7.86739 4 8C4 8.13261 4.05268 8.25979 4.14645 8.35355C4.24021 8.44732 4.36739 8.5 4.5 8.5H7.5V11.5C7.5 11.6326 7.55268 11.7598 7.64645 11.8536C7.74021 11.9473 7.86739 12 8 12C8.13261 12 8.25979 11.9473 8.35355 11.8536C8.44732 11.7598 8.5 11.6326 8.5 11.5V8.5H11.5C11.6326 8.5 11.7598 8.44732 11.8536 8.35355C11.9473 8.25979 12 8.13261 12 8C12 7.86739 11.9473 7.74021 11.8536 7.64645C11.7598 7.55268 11.6326 7.5 11.5 7.5H8.5V4.5Z"
+                      fill="white"
+                    />
+                  </svg>
+                </button>
+              </Col>
+              <Col className="ringkasan-btn" md="auto">
+                <button className="btn-pengeluaran">
+                  Pengeluaran{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="17"
+                    viewBox="0 0 16 17"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_5_288)">
+                      <path
+                        d="M16 8.5C16 10.6217 15.1571 12.6566 13.6569 14.1569C12.1566 15.6571 10.1217 16.5 8 16.5C5.87827 16.5 3.84344 15.6571 2.34315 14.1569C0.842855 12.6566 0 10.6217 0 8.5C0 6.37827 0.842855 4.34344 2.34315 2.84315C3.84344 1.34285 5.87827 0.5 8 0.5C10.1217 0.5 12.1566 1.34285 13.6569 2.84315C15.1571 4.34344 16 6.37827 16 8.5ZM4.5 8C4.36739 8 4.24021 8.05268 4.14645 8.14645C4.05268 8.24021 4 8.36739 4 8.5C4 8.63261 4.05268 8.75979 4.14645 8.85355C4.24021 8.94732 4.36739 9 4.5 9H11.5C11.6326 9 11.7598 8.94732 11.8536 8.85355C11.9473 8.75979 12 8.63261 12 8.5C12 8.36739 11.9473 8.24021 11.8536 8.14645C11.7598 8.05268 11.6326 8 11.5 8H4.5Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_5_288">
+                        <rect
+                          width="16"
+                          height="16"
+                          fill="white"
+                          transform="translate(0 0.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+              </Col>
+            </Row>
+          </div>
+          <div class="riwayat-transaksi">
+            <Row className="d-flex">
+              <Col
+                sm={9}
+                xs={6}
+                className="d-flex align-items-center wrap-tanggal"
+              >
+                <div class="wrap-svg">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    viewBox="0 0 21 20"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_1_209)">
+                      <path
+                        d="M15.67 0.4075C15.9463 0.338379 16.2348 0.333123 16.5134 0.392129C16.7921 0.451136 17.0536 0.572854 17.2782 0.748045C17.5028 0.923235 17.6845 1.14729 17.8096 1.40321C17.9347 1.65912 17.9998 1.94016 18 2.225V3.75H18.625C19.1223 3.75 19.5992 3.94754 19.9508 4.29918C20.3025 4.65081 20.5 5.12772 20.5 5.625V16.875C20.5 17.3723 20.3025 17.8492 19.9508 18.2008C19.5992 18.5525 19.1223 18.75 18.625 18.75H2.375C1.87772 18.75 1.40081 18.5525 1.04917 18.2008C0.697544 17.8492 0.5 17.3723 0.5 16.875V5.625C0.499826 5.14232 0.685803 4.67816 1.01922 4.32914C1.35264 3.98012 1.80781 3.77313 2.29 3.75125L15.67 0.4075ZM7.4525 3.75H16.75V2.225C16.7498 2.13017 16.728 2.03663 16.6863 1.95147C16.6446 1.86631 16.584 1.79176 16.5092 1.73346C16.4344 1.67517 16.3473 1.63466 16.2546 1.615C16.1618 1.59534 16.0658 1.59705 15.9737 1.62L7.4525 3.75ZM2.375 5C2.20924 5 2.05027 5.06585 1.93306 5.18306C1.81585 5.30027 1.75 5.45924 1.75 5.625V16.875C1.75 17.0408 1.81585 17.1997 1.93306 17.3169C2.05027 17.4342 2.20924 17.5 2.375 17.5H18.625C18.7908 17.5 18.9497 17.4342 19.0669 17.3169C19.1842 17.1997 19.25 17.0408 19.25 16.875V5.625C19.25 5.45924 19.1842 5.30027 19.0669 5.18306C18.9497 5.06585 18.7908 5 18.625 5H2.375Z"
+                        fill="#3C3DBF"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_1_209">
+                        <rect
+                          width="20"
+                          height="20"
+                          fill="white"
+                          transform="translate(0.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+                <div className="desc-list">
+                  <p>Menerima Gaji</p>
+                  <p className="tanggal-list">1 July 2023</p>
+                </div>
+              </Col>
+              <Col sm={3} md="auto" className="nominal-list">
+                <h5>Rp.10.000.000,-</h5>
+              </Col>
+            </Row>
+            <Row className="d-flex">
+              <Col
+                sm={9}
+                xs={6}
+                className="d-flex align-items-center wrap-tanggal"
+              >
+                <div class="wrap-svg">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="20"
+                    viewBox="0 0 21 20"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_1_209)">
+                      <path
+                        d="M15.67 0.4075C15.9463 0.338379 16.2348 0.333123 16.5134 0.392129C16.7921 0.451136 17.0536 0.572854 17.2782 0.748045C17.5028 0.923235 17.6845 1.14729 17.8096 1.40321C17.9347 1.65912 17.9998 1.94016 18 2.225V3.75H18.625C19.1223 3.75 19.5992 3.94754 19.9508 4.29918C20.3025 4.65081 20.5 5.12772 20.5 5.625V16.875C20.5 17.3723 20.3025 17.8492 19.9508 18.2008C19.5992 18.5525 19.1223 18.75 18.625 18.75H2.375C1.87772 18.75 1.40081 18.5525 1.04917 18.2008C0.697544 17.8492 0.5 17.3723 0.5 16.875V5.625C0.499826 5.14232 0.685803 4.67816 1.01922 4.32914C1.35264 3.98012 1.80781 3.77313 2.29 3.75125L15.67 0.4075ZM7.4525 3.75H16.75V2.225C16.7498 2.13017 16.728 2.03663 16.6863 1.95147C16.6446 1.86631 16.584 1.79176 16.5092 1.73346C16.4344 1.67517 16.3473 1.63466 16.2546 1.615C16.1618 1.59534 16.0658 1.59705 15.9737 1.62L7.4525 3.75ZM2.375 5C2.20924 5 2.05027 5.06585 1.93306 5.18306C1.81585 5.30027 1.75 5.45924 1.75 5.625V16.875C1.75 17.0408 1.81585 17.1997 1.93306 17.3169C2.05027 17.4342 2.20924 17.5 2.375 17.5H18.625C18.7908 17.5 18.9497 17.4342 19.0669 17.3169C19.1842 17.1997 19.25 17.0408 19.25 16.875V5.625C19.25 5.45924 19.1842 5.30027 19.0669 5.18306C18.9497 5.06585 18.7908 5 18.625 5H2.375Z"
+                        fill="#3C3DBF"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_1_209">
+                        <rect
+                          width="20"
+                          height="20"
+                          fill="white"
+                          transform="translate(0.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+                <div className="desc-list">
+                  <p>Menerima Gaji</p>
+                  <p className="tanggal-list">1 July 2023</p>
+                </div>
+              </Col>
+              <Col sm={3} md="auto" className="nominal-list">
+                <h5>Rp.25.000,-</h5>
+              </Col>
+            </Row>
+          </div>
+        </Container>
+      </>
+    );
+  }
 }
 
 export default App;
